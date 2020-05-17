@@ -10,7 +10,7 @@ public class EnemyGenerator : MonoBehaviour
     void Start()
     {
         //繰り返し敵の生成
-        InvokeRepeating("Spawn",2f,0.7f);　//Spawnを2秒後に0.5刻み
+        InvokeRepeating("Spawn",2f,0.5f);　//Spawnを2秒後に0.5刻み
     }
     //敵の生成
     void Spawn(){
