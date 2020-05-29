@@ -11,6 +11,7 @@ public class BombSEscript : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.PlayOneShot(sound1);
+        Destroy(gameObject,1.5f);
     }
 
     // Update is called once per frame
@@ -24,6 +25,7 @@ public class BombSEscript : MonoBehaviour
     
         if (collision.gameObject.tag == "bullet"){
             audioSource.PlayOneShot(sound1);
+        
         }
 
     }
