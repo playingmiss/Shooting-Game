@@ -96,9 +96,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e095ee7a7870402eb695e9a45008ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamecontroller: {fileID: 0}
   explosion: {fileID: 7623058180571361747, guid: 625b05348d5395a43bb8abf70df8fc10,
     type: 3}
-  sound1: {fileID: 8300000, guid: 1c907a8db724852479299c9c04e99077, type: 3}
+  explosion2: {fileID: 139422, guid: b0c58804b6a5123429b01d07b4620cea, type: 3}
 --- !u!58 &8638662871903154133
 CircleCollider2D:
   m_ObjectHideFlags: 0
