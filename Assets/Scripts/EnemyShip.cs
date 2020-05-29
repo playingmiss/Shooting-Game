@@ -6,12 +6,14 @@ using UnityEngine;
 
 public class EnemyShip : MonoBehaviour
 {
+    public ScoreCounter gamecontroller;
     public GameObject explosion;//破壊のプレふぁぶ
     //public AudioClip sound1;
     //AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
+        gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter>();
         //audioSource = GetComponent<AudioSource>();
     }
 
@@ -33,6 +35,8 @@ public class EnemyShip : MonoBehaviour
             
             Destroy(gameObject);
             Destroy(collision.gameObject);
+            gamecontroller.addscore();
+
             //audioSource.PlayOneShot(sound1);
         }
 

@@ -36,7 +36,7 @@ public void OnDrag()
             // 弾をプレイヤーと同じ位置/角度で作成
             Instantiate(bullet, transform.position, transform.rotation);
             // 0.05秒待つ
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.5f);
         }
     }
 }
