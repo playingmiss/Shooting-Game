@@ -7,12 +7,12 @@ using UnityEngine;
 public class EnemyShip : MonoBehaviour
 {
     public GameObject explosion;//破壊のプレふぁぶ
-    public AudioClip sound1;
-    AudioSource audioSource;
+    //public AudioClip sound1;
+    //AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
-        
+        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

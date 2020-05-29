@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SEscript : MonoBehaviour
+public class BombSEscript : MonoBehaviour
 {
     public AudioClip sound1;
     AudioSource audioSource;
@@ -10,6 +10,7 @@ public class SEscript : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(sound1);
     }
 
     // Update is called once per frame
@@ -18,6 +19,7 @@ public class SEscript : MonoBehaviour
         
     }
 
+/**
     void OnTriggerEnter2D(Collider2D collision){
     
         if (collision.gameObject.tag == "bullet"){
@@ -25,4 +27,5 @@ public class SEscript : MonoBehaviour
         }
 
     }
+*/
 }

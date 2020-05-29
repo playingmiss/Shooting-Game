@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BulletManegar : MonoBehaviour
 {
-    public AudioClip sound1;
-    AudioSource audioSource;
+    //public AudioClip sound1;
+    //AudioSource audioSource;
     
     
 
