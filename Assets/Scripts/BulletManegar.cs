@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BulletManegar : MonoBehaviour
 {
+    //public AudioClip sound1;
+    //AudioSource audioSource;
     
     
 
@@ -17,4 +19,10 @@ public class BulletManegar : MonoBehaviour
 			Destroy (gameObject);
         }
     }
+
+   //void OnTriggerEnter2D(Collider2D collision){
+        //    audioSource.PlayOneShot(sound1);
+
+   // }
+
 }
