@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyGenerator : MonoBehaviour
 {
     public GameObject enemy;
+    public GameObject enemy2;//アイテム落とす
+    public GameObject item1;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,17 @@ public class EnemyGenerator : MonoBehaviour
             transform.position.y,
             transform.position.z
         );
-        Instantiate(enemy,spawnPosition,transform.rotation);
+        if (Random.Range (0, 10) == 0) {
+            Instantiate(enemy2,spawnPosition,transform.rotation);
+        }
+        //アイテム生成
+//        else if(Random.Range (0, 10) == 2){
+//           Instantiate(item1,spawnPosition,transform.rotation);
+//        }
+        else{
+            Instantiate(enemy,spawnPosition,transform.rotation);
+        }
+
     }
 
     // Update is called once per frame
