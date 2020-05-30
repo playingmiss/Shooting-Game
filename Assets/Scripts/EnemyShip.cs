@@ -30,7 +30,7 @@ public class EnemyShip : MonoBehaviour
     }
     //当たり判定
     void OnTriggerEnter2D(Collider2D collision){
-    
+   
         if (collision.gameObject.tag == "bullet"){
             //audioSource.PlayOneShot(sound1);
             Instantiate(explosion,transform.position,transform.rotation);
@@ -48,6 +48,7 @@ public class EnemyShip : MonoBehaviour
             gamecontroller.GameOver();
             Destroy(collision.gameObject);
         }
+
     }
 
     

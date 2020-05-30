@@ -27,8 +27,10 @@ public class ScoreCounter : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)){
-            SceneManager.LoadScene("unity_shoot_22");
+        if(GameOverText.activeSelf == true){//ゲームオーバーテキストがアクティブの時...
+            if (Input.GetKeyDown(KeyCode.Space)){
+                SceneManager.LoadScene("unity_shoot_22");
+            }
         }
     }
 }
