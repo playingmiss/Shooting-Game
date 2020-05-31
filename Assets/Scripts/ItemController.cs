@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ItemController : MonoBehaviour
 {
+    public GameObject get;
+    //public GameObject SpeedUpText;
     //public ItemController itemcontroller;
     // Start is called before the first frame update
 
@@ -30,6 +32,8 @@ public class ItemController : MonoBehaviour
         if (collision.gameObject.tag == "player"){
             //audioSource.PlayOneShot(sound1);
             //Instantiate(explosion,transform.position,transform.rotation);
+            Instantiate(get,transform.position,transform.rotation);
+            //Instantiate(SpeedUpText,transform.position,transform.rotation);
             Debug.Log("アイテム取得");
             Destroy(gameObject);
             //Destroy(collision.gameObject);
