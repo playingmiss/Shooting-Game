@@ -20,8 +20,10 @@ public class ScoreCounter : MonoBehaviour
     }
 
     public void addscore(){
-        score += 50;
-        scoreText.text = "SCORE:" + score;
+        if(GameOverText.activeSelf == false){//もしゲームオーバーでなければ
+            score += 100;
+            scoreText.text = "SCORE:" + score;
+        }
     }
     // Update is called once per frame
     public void GameOver(){
@@ -37,6 +39,9 @@ public class ScoreCounter : MonoBehaviour
                         break;
                     case "unity_shoot_2":
                         SceneManager.LoadScene("unity_shoot_2");
+                        break;
+                    case "unity_shoot_3":
+                        SceneManager.LoadScene("unity_shoot_3");
                         break;
                     default:
                         Debug.Log("Default");

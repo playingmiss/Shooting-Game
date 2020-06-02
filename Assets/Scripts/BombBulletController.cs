@@ -12,7 +12,7 @@ public class BombBulletController : MonoBehaviour
     void Start()
     {
         Vector3 direction = new Vector3(Mathf.Cos(angle[i]*Mathf.Deg2Rad),Mathf.Sin(angle[i]*Mathf.Deg2Rad),0);//角度計算
-        velocity = direction * 0.1f;
+        velocity = direction * 0.2f;
         i++;
         if(i==8) i=0;
     }
@@ -21,7 +21,7 @@ public class BombBulletController : MonoBehaviour
     void Update()
     {
         transform.position += velocity;
-        Debug.Log(velocity);
+        //Debug.Log(velocity);
         Destroy(gameObject,2f);
         
     }

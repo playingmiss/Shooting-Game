@@ -1,58 +1,58 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
-public class EnemyShip3 : MonoBehaviour
+
+public class EnemyShip4 : MonoBehaviour
 {
     public ScoreCounter gamecontroller;
-    public GameObject enemybullet;
-    public GameObject explosion;
-    public GameObject explosion2;
-    //public GameObject bomb_item;//ボムアイテム
-    int flag = 0;
+    public GameObject explosion;//破壊のプレふぁぶ
+    public GameObject explosion2;//自機の爆発
+    public GameObject bomb_item;//ボムアイテム
 
+    //public AudioClip sound1;
+    //AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter>();
+        //audioSource = GetComponent<AudioSource>();
     }
-
 
     // Update is called once per frame
     void Update()
-    {
-
+    {   //敵の移動
         transform.position -= new Vector3 (0,4*Time.deltaTime,0);
-        if(transform.position.y < 3 && flag == 0){
-            Instantiate(enemybullet, transform.position, transform.rotation);
-            flag = 1;
 
-        }
         if (transform.position.y < -7) {
 			Destroy (gameObject);
         }
-
     }
-
-
-
-
+    //当たり判定
     void OnTriggerEnter2D(Collider2D collision){
+   
         if (collision.gameObject.tag == "bullet"){
             //audioSource.PlayOneShot(sound1);
             Instantiate(explosion,transform.position,transform.rotation);
-            //if(Random.Range(0,10) <= 3)
-            //    Instantiate(bomb_item,transform.position,transform.rotation);
+            if(Random.Range(0,10) <= 3)
+                Instantiate(bomb_item,transform.position,transform.rotation);
             
             Destroy(gameObject);
             Destroy(collision.gameObject);
             gamecontroller.addscore();
+
+            //audioSource.PlayOneShot(sound1);
         }
+
         if (collision.gameObject.tag == "player"){
             Instantiate(explosion2,transform.position,transform.rotation);
             Debug.Log("Game Over");
             gamecontroller.GameOver();
             Destroy(collision.gameObject);
         }
+
     }
+
+    
 }
