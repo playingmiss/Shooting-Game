@@ -9,10 +9,13 @@ public class ScoreCounter2 : MonoBehaviour
     public GameObject GameOverText;
     public Text scoreText ;
     int score = 0;
+    Scene activescene;//アクティブなシーンを代入
 
     // Start is called before the first frame update
     void Start()
     {
+      activescene = SceneManager.GetActiveScene();
+      //Debug.Log("Active scene is "+activescene.name+".");//テスト用  
       GameOverText.SetActive(false);  
       scoreText.text = "SCORE:" + score;  
     }

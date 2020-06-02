@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyShip3 : MonoBehaviour
 {
-    public ScoreCounter2 gamecontroller;
+    public ScoreCounter gamecontroller;
     public GameObject enemybullet;
     public GameObject explosion;
     public GameObject explosion2;
@@ -13,7 +13,7 @@ public class EnemyShip3 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter2>();
+        gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter>();
     }
 
 

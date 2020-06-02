@@ -5,11 +5,11 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     public GameObject explosion;//自機の破壊
-    public ScoreCounter2 gamecontroller;
+    public ScoreCounter gamecontroller;
     // Start is called before the first frame update
     void Start()
     {
-        gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter2>();
+        gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter>();
     }
 
     // Update is called once per frame
