@@ -12,7 +12,7 @@ public class ItemController : MonoBehaviour
 
     void Start()
     {
-        Destroy(gameObject,3.0f);
+        Destroy(gameObject,10.0f);
         //InvokeRepeating("Spawn",2f,0.5f);
         //itemcontroller = GameObject.Find("ItemController").GetComponent<ItemController>();
     }

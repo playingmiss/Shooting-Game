@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3266405773179475591}
   - component: {fileID: 3266405773179475588}
   - component: {fileID: 3398428093822680792}
+  - component: {fileID: -4686268188093872615}
   m_Layer: 0
-  m_Name: Item1
+  m_Name: Speed
   m_TagString: Item1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300812, guid: 4f3d817ad821bc345b488255f0de8318, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5896226, b: 0.86334425, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,5 +135,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   get: {fileID: 125362, guid: a6a2b53243ced7e4fbad66739b8bbece, type: 3}
-  SpeedUpText: {fileID: 981564553584125515, guid: a52be704262907342b87c3d544597c9e,
-    type: 3}
+--- !u!114 &-4686268188093872615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266405773179475589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e11d84026f31549a87583805b603d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item_vanish: 0
+  level: 0
