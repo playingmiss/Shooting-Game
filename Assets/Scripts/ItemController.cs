@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class ItemController : MonoBehaviour
 {
     public GameObject get;
+    //[SerializeField]
+    //public GameObject SpeedUp;//speedupプレハブ
     //public GameObject SpeedUpText;
     //public ItemController itemcontroller;
     // Start is called before the first frame update
@@ -30,15 +32,11 @@ public class ItemController : MonoBehaviour
     //当たり判定
     void OnTriggerEnter2D(Collider2D collision){
         if (collision.gameObject.tag == "player"){
-            //audioSource.PlayOneShot(sound1);
-            //Instantiate(explosion,transform.position,transform.rotation);
             Instantiate(get,transform.position,transform.rotation);
-            //Instantiate(SpeedUpText,transform.position,transform.rotation);
             Debug.Log("アイテム取得");
             Destroy(gameObject);
-            //Destroy(collision.gameObject);
-            //itemcontroller.addspeed();
             Player.speed *= 0.97f;
+            //var obj = Instantiate<GameObject>(SpeedUp,collision.bounds.center - Camera.main.transform.forward * 0.2f, Quaternion.identity);//sppedupをインスタンス化
             //speed *= 0.7f;
 
             //gamecontroller.addscore();

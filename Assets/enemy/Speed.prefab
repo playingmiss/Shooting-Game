@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   get: {fileID: 125362, guid: a6a2b53243ced7e4fbad66739b8bbece, type: 3}
+  SpeedUp: {fileID: 3777735156913798077, guid: c45d3edc3a7772446906e9b15a780d1f, type: 3}
 --- !u!114 &-4686268188093872615
 MonoBehaviour:
   m_ObjectHideFlags: 0
