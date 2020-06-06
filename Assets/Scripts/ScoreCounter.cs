@@ -7,8 +7,10 @@ using UnityEngine.SceneManagement;
 public class ScoreCounter : MonoBehaviour
 {
     public GameObject GameOverText;
+    public GameObject GameClearText;
     public Text scoreText ;
-    int score = 0;
+    public static int score = 0;//ゲームスコア
+    public int scenescore = 0;//シーン内スコア
     Scene activescene;//アクティブなシーンを代入
 
     // Start is called before the first frame update
@@ -16,15 +18,24 @@ public class ScoreCounter : MonoBehaviour
     {
       activescene = SceneManager.GetActiveScene();//GetActiveScene()でアクティブなシーンを獲得
       GameOverText.SetActive(false);  
+      GameClearText.SetActive(false); 
       scoreText.text = "SCORE:" + score;  
     }
 
     public void addscore(){
-        if(GameOverText.activeSelf == false){//もしゲームオーバーでなければ
+        if(GameOverText.activeSelf == false){//もしゲームオーバーでなければ           
             score += 100;
+            scenescore += 100;
             scoreText.text = "SCORE:" + score;
+            if(scenescore >= 500){
+                BarrierSystem.barrier = 1;
+                GameClearText.SetActive(true);
+                StartCoroutine("SceneChange");
+                
+            }
         }
     }
+
     // Update is called once per frame
     public void GameOver(){
         GameOverText.SetActive(true);
@@ -33,21 +44,30 @@ public class ScoreCounter : MonoBehaviour
     {
         if(GameOverText.activeSelf == true){//ゲームオーバーテキストがアクティブの時...
             if(Input.GetKeyDown(KeyCode.Space)){
-                switch(activescene.name){
-                    case "unity_shoot_22":
-                        SceneManager.LoadScene("unity_shoot_22");
-                        break;
-                    case "unity_shoot_2":
-                        SceneManager.LoadScene("unity_shoot_2");
-                        break;
-                    case "unity_shoot_3":
-                        SceneManager.LoadScene("unity_shoot_3");
-                        break;
-                    default:
-                        Debug.Log("Default");
-                        break;
-                }
+                score = 0;
+                SceneManager.LoadScene("unity_shoot_22");
             }
+        }
+    }
+
+    IEnumerator SceneChange()
+    {
+        yield return new WaitForSeconds(3);
+        BarrierSystem.barrier = 0;
+        switch (activescene.name)
+        {
+            case "unity_shoot_22":
+                SceneManager.LoadScene("unity_shoot_3");
+                break;
+            case "unity_shoot_3":
+                SceneManager.LoadScene("unity_shoot_2");
+                break;
+            case "unity_shoot_2":
+                SceneManager.LoadScene("unity_shoot_22");
+                break;
+            default:
+                Debug.Log("Default");
+                break;
         }
     }
 }

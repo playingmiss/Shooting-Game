@@ -43,7 +43,8 @@ public class EnemyShip_Item1 : MonoBehaviour
             //audioSource.PlayOneShot(sound1);
         }
 
-        if (collision.gameObject.tag == "player"){
+        if (collision.gameObject.tag == "player" && BarrierSystem.barrier == 0)
+        {
             Instantiate(explosion2,transform.position,transform.rotation);
             Debug.Log("Game Over");
             gamecontroller.GameOver();

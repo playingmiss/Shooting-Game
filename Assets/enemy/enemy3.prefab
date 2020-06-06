@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4345912758618465318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.64, y: 4.01, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -102,8 +102,6 @@ MonoBehaviour:
   explosion: {fileID: 7623058180571361747, guid: 625b05348d5395a43bb8abf70df8fc10,
     type: 3}
   explosion2: {fileID: 139422, guid: b0c58804b6a5123429b01d07b4620cea, type: 3}
-  bomb_item: {fileID: 9034036344095679938, guid: 5b866a2d7b9da674480105e9db16a734,
-    type: 3}
 --- !u!58 &1448300462814949641
 CircleCollider2D:
   m_ObjectHideFlags: 0

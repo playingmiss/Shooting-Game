@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/unity_shoot_2.unity
     guid: 4c528fc777ab46b4496cce272e4f0c84
+  - enabled: 1
+    path: Assets/unity_shoot_3.unity
+    guid: a4cbed570ca8f3849a15ed03182962c3
   m_configObjects: {}
