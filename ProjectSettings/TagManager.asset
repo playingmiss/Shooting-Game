@@ -7,6 +7,8 @@ TagManager:
   - bullet
   - player
   - Item1
+  - Boss
+  - bullet2
   layers:
   - Default
   - TransparentFX

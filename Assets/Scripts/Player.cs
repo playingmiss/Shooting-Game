@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
 // PlayerBullet プレハブ
 public GameObject bullet;
 public static float speed=0.5f;
-
+       
 public void OnDrag()
     {
         Vector3 TapPos = Input.mousePosition;

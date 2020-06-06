@@ -31,8 +31,8 @@ public class EnemyShip : MonoBehaviour
     //当たり判定
     void OnTriggerEnter2D(Collider2D collision){
    
-        if (collision.gameObject.tag == "bullet"){//バリアがない場合
-            //audioSource.PlayOneShot(sound1);
+        if ((collision.gameObject.tag == "bullet")||(collision.gameObject.tag == "bullet2")){
+            //audioSource.PlayOneShot(sound1); 
             Instantiate(explosion,transform.position,transform.rotation);
             
             Destroy(gameObject);
@@ -42,7 +42,9 @@ public class EnemyShip : MonoBehaviour
             //audioSource.PlayOneShot(sound1);
         }
 
-        if (collision.gameObject.tag == "player" && BarrierSystem.barrier == 0){
+        
+
+        if (collision.gameObject.tag == "player"){
             Instantiate(explosion2,transform.position,transform.rotation);
             Debug.Log("Game Over");
             gamecontroller.GameOver();

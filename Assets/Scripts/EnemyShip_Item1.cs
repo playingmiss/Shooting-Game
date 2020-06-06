@@ -30,7 +30,7 @@ public class EnemyShip_Item1 : MonoBehaviour
     //当たり判定
     void OnTriggerEnter2D(Collider2D collision){
             Debug.Log("collision");
-        if (collision.gameObject.tag == "bullet"){
+        if ((collision.gameObject.tag == "bullet")||(collision.gameObject.tag == "bullet2")){
             //audioSource.PlayOneShot(sound1);
             //Debug.Log("collision");
             Instantiate(explosion,transform.position,transform.rotation);

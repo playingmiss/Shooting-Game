@@ -12,6 +12,7 @@ public class ScoreCounter : MonoBehaviour
     public static int score = 0;//ゲームスコア
     public int scenescore = 0;//シーン内スコア
     Scene activescene;//アクティブなシーンを代入
+    public static bool not_Boss = true;
 
     // Start is called before the first frame update
     void Start()
@@ -27,11 +28,13 @@ public class ScoreCounter : MonoBehaviour
             score += 100;
             scenescore += 100;
             scoreText.text = "SCORE:" + score;
-            if(scenescore >= 500){
-                BarrierSystem.barrier = 1;
-                GameClearText.SetActive(true);
-                StartCoroutine("SceneChange");
+            if(not_Boss == true ){
+                if(scenescore >= 100){
+                    BarrierSystem.barrier = 1;
+                    GameClearText.SetActive(true);
+                    StartCoroutine("SceneChange");
                 
+                }
             }
         }
     }
@@ -63,7 +66,8 @@ public class ScoreCounter : MonoBehaviour
                 SceneManager.LoadScene("unity_shoot_2");
                 break;
             case "unity_shoot_2":
-                SceneManager.LoadScene("unity_shoot_22");
+                SceneManager.LoadScene("BossStage");
+                not_Boss = false;
                 break;
             default:
                 Debug.Log("Default");

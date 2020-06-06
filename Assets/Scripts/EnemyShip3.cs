@@ -38,7 +38,7 @@ public class EnemyShip3 : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D collision){
-        if (collision.gameObject.tag == "bullet"){
+        if ((collision.gameObject.tag == "bullet")||(collision.gameObject.tag == "bullet2")){
             //audioSource.PlayOneShot(sound1);
             Instantiate(explosion,transform.position,transform.rotation);
             //if(Random.Range(0,10) <= 3)
