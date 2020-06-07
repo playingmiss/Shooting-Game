@@ -11,13 +11,10 @@ public class EnemyShip4 : MonoBehaviour
     public GameObject explosion2;//自機の爆発
     public GameObject bomb_item;//ボムアイテム
 
-    //public AudioClip sound1;
-    //AudioSource audioSource;
     // Start is called before the first frame update
     void Start()
     {
         gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter>();
-        //audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -33,7 +30,6 @@ public class EnemyShip4 : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
    
         if ((collision.gameObject.tag == "bullet")||(collision.gameObject.tag == "bullet2")){
-            //audioSource.PlayOneShot(sound1);
             Instantiate(explosion,transform.position,transform.rotation);
             if(Random.Range(0,10) <= 3)
                 Instantiate(bomb_item,transform.position,transform.rotation);
@@ -42,11 +38,11 @@ public class EnemyShip4 : MonoBehaviour
             Destroy(collision.gameObject);
             gamecontroller.addscore();
 
-            //audioSource.PlayOneShot(sound1);
         }
 
         if (collision.gameObject.tag == "player" && BarrierSystem.barrier == 0)
         {
+            BossShip.gameoverflag = 1;//BossShipのゲームオーバーフラグを立てる.
             Instantiate(explosion2,transform.position,transform.rotation);
             Debug.Log("Game Over");
             gamecontroller.GameOver();

@@ -17,7 +17,8 @@ public class EnemyGenerator4 : MonoBehaviour
             transform.position.y,
             transform.position.z
         );
-        Instantiate(enemy4,spawnPosition,transform.rotation);
+        if(BossShip.clearflag == 0)//BossShipのクリアフラグが立っていなければ
+            Instantiate(enemy4,spawnPosition,transform.rotation);
     }
 
     // Update is called once per frame
