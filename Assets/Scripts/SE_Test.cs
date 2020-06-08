@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SE_Test : MonoBehaviour
 {
-
+    public HPbar bar;//HPバー
     public GameObject explosion;//破壊のプレふぁぶ
     public GameObject explosion2;//自機の爆発
     int SE_flag=0;
+    float hp = 20;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        bar = GameObject.Find("HPbarTest").GetComponent<HPbar>();
     }
 
     // Update is called once per frame
@@ -24,18 +25,20 @@ public class SE_Test : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
    
         if ((collision.gameObject.tag == "bullet")||(collision.gameObject.tag == "bullet2")){
-            if(SE_flag==0){
-                SE_flag=1;
+            if(hp!=0){
+                hp--;
+                bar.HPdecrease(hp);
+                Instantiate(explosion,collision.transform.position,collision.transform.rotation);
                 Destroy(collision.gameObject);
-                StartCoroutine("ManySE");//たくさんのSEエフェクトを作る
-                Instantiate(explosion,transform.position,transform.rotation);
             }
-            
-            //Destroy(gameObject);
-            //Destroy(collision.gameObject);
-            //gamecontroller.addscore();
-
-
+            if(hp==0){
+                if(SE_flag==0){
+                    SE_flag=1;
+                    Destroy(collision.gameObject);
+                    StartCoroutine("ManySE");//たくさんのSEエフェクトを作る
+                    Instantiate(explosion,transform.position,transform.rotation);
+                }
+            }
         } 
 
         if (collision.gameObject.tag == "player" && BarrierSystem.barrier == 0){

@@ -9,9 +9,10 @@ public class BossShip : MonoBehaviour
     public BGMController bgmcontroller;//追加
     public GameObject explosion;//破壊のプレふぁぶ
     public GameObject explosion2;//自機の爆発
+    public HPbar bar;//HPバー
     public static int gameoverflag = 0;//ゲームオーバーフラグ
     public static int clearflag = 0;//ボスクリアフラグ
-    int x = 1;
+    float x = 20;//ボスのHP
     bool m_xPlus = true;
     bool m_yPlus = true;
     bool m_Plus = true;
@@ -25,6 +26,7 @@ public class BossShip : MonoBehaviour
         ScoreCounter.not_Boss = false;//最初からボスをする時にする必要がある.テストのためにも.
         gamecontroller = GameObject.Find("GameController").GetComponent<ScoreCounter>();
         bgmcontroller = GameObject.Find("Audio Source").GetComponent<BGMController>();//追加
+        bar = GameObject.Find("HPbar").GetComponent<HPbar>();//HPバーのオブジェクトからHPbarスクリプトをFindする.
         GameClearText.SetActive(false);
     }
 
@@ -61,9 +63,12 @@ public class BossShip : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision){
    
         if (collision.gameObject.tag == "bullet2" && gameoverflag == 0){//ゲームオーバーではない時のみダメージが通る
-           
-            Instantiate(explosion,collision.transform.position,collision.transform.rotation);
-            x--;
+            if(x!=0){
+                Instantiate(explosion,collision.transform.position,collision.transform.rotation);
+                x--;
+                bar.HPdecrease(x);
+                Destroy(collision.gameObject);
+            }
             if(x==0 && SE_flag == false){//追加3
                 SE_flag = true;//追加4
                 clearflag = 1;//クリアフラグを立てる.
