@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/BossStage.unity
     guid: 8938201a6fa724516a2cdfd42727c600
+  - enabled: 1
+    path: Assets/Endless.unity
+    guid: e4a9b622518ce488f9d2052b1df2ef34
   m_configObjects: {}

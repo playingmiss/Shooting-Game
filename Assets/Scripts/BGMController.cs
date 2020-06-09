@@ -29,7 +29,7 @@ public class BGMController : MonoBehaviour
         source.PlayOneShot(ClearSE);
         Destroy(gameObject,8f);
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("Endless");//テスト用
+        SceneManager.LoadScene("Endless");
         BarrierSystem.barrier = 0;//テスト用
     }
 

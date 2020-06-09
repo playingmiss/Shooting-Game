@@ -48,6 +48,7 @@ public class ScoreCounter : MonoBehaviour
         if(GameOverText.activeSelf == true){//ゲームオーバーテキストがアクティブの時...
             if(Input.GetKeyDown(KeyCode.Space)){
                 score = 0;
+                not_Boss = true;
                 SceneManager.LoadScene("unity_shoot_22");
             }
         }
