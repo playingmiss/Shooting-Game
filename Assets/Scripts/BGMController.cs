@@ -26,11 +26,10 @@ public class BGMController : MonoBehaviour
 
     IEnumerator BossClear(){
         yield return new WaitForSeconds(5f);
-        ScoreCounter.not_Boss = true;
         source.PlayOneShot(ClearSE);
         Destroy(gameObject,8f);
         yield return new WaitForSeconds(5f);
-        SceneManager.LoadScene("unity_shoot_22");//テスト用
+        SceneManager.LoadScene("Endless");//テスト用
         BarrierSystem.barrier = 0;//テスト用
     }
 

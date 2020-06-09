@@ -104,9 +104,7 @@ public class BossShip : MonoBehaviour
         yield return new WaitForSeconds(0.25f);
         Instantiate(explosion,transform.position,transform.rotation);
         Destroy(gameObject);
-        ScoreCounter.not_Boss = true;
-        gamecontroller.addscore();
-
+        
 
     }
   

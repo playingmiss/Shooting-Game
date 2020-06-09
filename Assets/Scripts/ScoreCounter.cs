@@ -69,10 +69,6 @@ public class ScoreCounter : MonoBehaviour
                 SceneManager.LoadScene("BossStage");
                 not_Boss = false;
                 break;
-            case "BossStage":
-                SceneManager.LoadScene("Endless");
-                not_Boss = false;
-                break;
             default:
                 Debug.Log("Default");
                 break;
