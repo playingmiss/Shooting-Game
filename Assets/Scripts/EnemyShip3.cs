@@ -22,7 +22,7 @@ public class EnemyShip3 : MonoBehaviour
     void Update()
     {
 
-        transform.position -= new Vector3 (0,4*Time.deltaTime,0);
+        transform.position -= new Vector3 (0,4.5f*Time.deltaTime,0);
         if(transform.position.y < 3 && flag == 0){
             Instantiate(enemybullet, transform.position, transform.rotation);
             flag = 1;

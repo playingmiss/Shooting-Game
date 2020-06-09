@@ -12,7 +12,7 @@ public class BossShip : MonoBehaviour
     public HPbar bar;//HPバー
     public static int gameoverflag = 0;//ゲームオーバーフラグ
     public static int clearflag = 0;//ボスクリアフラグ
-    float x = 20;//ボスのHP
+    float x = 1;//ボスのHP
     bool m_xPlus = true;
     bool m_yPlus = true;
     bool m_Plus = true;
@@ -103,9 +103,10 @@ public class BossShip : MonoBehaviour
         }
         yield return new WaitForSeconds(0.25f);
         Instantiate(explosion,transform.position,transform.rotation);
-        gamecontroller.addscore();
-        GameClearText.SetActive(true);
         Destroy(gameObject);
+        ScoreCounter.not_Boss = true;
+        gamecontroller.addscore();
+
 
     }
   

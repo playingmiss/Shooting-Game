@@ -33,11 +33,11 @@ public class ScoreCounter : MonoBehaviour
                     BarrierSystem.barrier = 1;
                     GameClearText.SetActive(true);
                     StartCoroutine("SceneChange");
-                
                 }
             }
         }
     }
+    
 
     // Update is called once per frame
     public void GameOver(){
@@ -67,6 +67,10 @@ public class ScoreCounter : MonoBehaviour
                 break;
             case "unity_shoot_2":
                 SceneManager.LoadScene("BossStage");
+                not_Boss = false;
+                break;
+            case "BossStage":
+                SceneManager.LoadScene("Endless");
                 not_Boss = false;
                 break;
             default:

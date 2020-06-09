@@ -20,7 +20,7 @@ public class EnemyShip4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {   //敵の移動
-        transform.position -= new Vector3 (0,4*Time.deltaTime,0);
+        transform.position -= new Vector3 (0,3.8f*Time.deltaTime,0);
 
         if (transform.position.y < -7) {
 			Destroy (gameObject);
