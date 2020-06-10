@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+
 public class BarrierSystem : MonoBehaviour
 {
-    public static int start;
-    public static int now;
-    public static int duration;
+    public int start;
+    public int now;
+    public int duration = 0;
     public static int barrier = 0;
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class BarrierSystem : MonoBehaviour
         if(duration > 5000) barrier = 0;//5秒間無敵
     }
 
-    public static void Barrier(){
+    public void Barrier(){
         barrier = 1;
         start = DateTime.Now.Hour * 60 *60 * 1000 + DateTime.Now.Minute * 60 * 1000 + 
             DateTime.Now.Second * 1000 + DateTime.Now.Millisecond;
