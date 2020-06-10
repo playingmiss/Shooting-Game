@@ -764,6 +764,7 @@ MonoBehaviour:
   explosion: {fileID: 7623058180571361747, guid: 625b05348d5395a43bb8abf70df8fc10,
     type: 3}
   explosion2: {fileID: 139422, guid: b0c58804b6a5123429b01d07b4620cea, type: 3}
+  bar: {fileID: 0}
 --- !u!1 &788601922
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,9 +857,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e622cb815200c4328b2f2f90d746c81a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: af65f0306364c475e99d8fc3ad7a6dcb, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.11
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1458,7 +1459,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300002, guid: 4f3d817ad821bc345b488255f0de8318, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.9337244, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1556,7 +1557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 130}
+  m_AnchoredPosition: {x: -500, y: 300}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1245428949
