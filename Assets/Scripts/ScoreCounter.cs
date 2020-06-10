@@ -63,6 +63,9 @@ public class ScoreCounter : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.Space)){
                 score = 0;
                 not_Boss = true;
+                stage1 = true;
+                stage2 = false;
+                stage3 = false;
                 SceneManager.LoadScene("unity_shoot_22");
             }
         }
