@@ -9,6 +9,7 @@ public class BossShip : MonoBehaviour
     public BGMController bgmcontroller;//追加
     public GameObject explosion;//破壊のプレふぁぶ
     public GameObject explosion2;//自機の爆発
+    public GameObject Ricochet;//跳弾音声
     public HPbar bar;//HPバー
     public static int gameoverflag = 0;//ゲームオーバーフラグ
     public static int clearflag = 0;//ボスクリアフラグ
@@ -78,6 +79,13 @@ public class BossShip : MonoBehaviour
             }
 
         }
+
+        if (collision.gameObject.tag == "bullet" && gameoverflag == 0)
+        {//弾をはじくような音
+            Instantiate(Ricochet, collision.transform.position, collision.transform.rotation);
+            Destroy(collision.gameObject);
+        }
+
 
         if (collision.gameObject.tag == "player" && BarrierSystem.barrier == 0){
             Debug.Log("やられた");

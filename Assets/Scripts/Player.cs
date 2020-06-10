@@ -14,8 +14,8 @@ public void OnDrag()
     {
         Vector3 TapPos = Input.mousePosition;
         TapPos.z = 10f;
-        TapPos.x = Mathf.Clamp(TapPos.x,40,1260);
-        TapPos.y = Mathf.Clamp(TapPos.y,50,750);
+        TapPos.x = Mathf.Clamp(TapPos.x,20,940);
+        TapPos.y = Mathf.Clamp(TapPos.y,30,510);
         transform.position = Camera.main.ScreenToWorldPoint(TapPos);
     }
     // Start is called before the first frame update
