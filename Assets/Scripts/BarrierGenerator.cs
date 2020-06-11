@@ -20,7 +20,7 @@ public class BarrierGenerator : MonoBehaviour
             transform.position.y,
             transform.position.z
         );
-        if (Random.Range(0, 1) == 0)
+        if (Random.Range(0, 2) == 0)
         {
             Instantiate(barrierItem, spawnPosition, transform.rotation);
         }

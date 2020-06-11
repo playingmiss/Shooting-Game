@@ -16,6 +16,7 @@ public class ScoreCounter : MonoBehaviour
     public static bool stage1 = true;//追加
     public static bool stage2 = false;//追加
     public static bool stage3 = false;//追加
+    public bool clearflag = false;//ゲームクリアフラグ追加.バリアステージでのバグ解消のため.
 
     // Start is called before the first frame update
     void Start()
@@ -46,6 +47,7 @@ public class ScoreCounter : MonoBehaviour
                     BarrierSystem.barrier = 1;
                     GameClearText.SetActive(true);
                     StartCoroutine("SceneChange");
+                    clearflag = true;//バグ解消のため追加
                 }
 
             }
@@ -75,6 +77,7 @@ public class ScoreCounter : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         BarrierSystem.barrier = 0;
+        clearflag = false;//バグ解消のため追加
         switch (activescene.name)
         {
             case "unity_shoot_22":

@@ -29,7 +29,7 @@ public class HPbar : MonoBehaviour
     }
 
     public void HPdecrease(float hp){
-        hp /= 20;
+        hp /= 15;
         _slider.value = hp;
     }
 

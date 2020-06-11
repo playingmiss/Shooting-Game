@@ -21,6 +21,7 @@ public void OnDrag()
     // Start is called before the first frame update
     void Start()
     {
+        speed = 0.5f;//追加.ステージが始まるごとにスピードを初期化
         StartCoroutine("Shot");
         //弾の発射処理（コルーチン Shot ）を実行
     }
