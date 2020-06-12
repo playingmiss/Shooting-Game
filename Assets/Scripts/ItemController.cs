@@ -35,7 +35,7 @@ public class ItemController : MonoBehaviour
             Instantiate(get,transform.position,transform.rotation);
             Debug.Log("アイテム取得");
             Destroy(gameObject);
-            Player.speed *= 0.97f;
+            Player.speed *= 0.70f;
             //var obj = Instantiate<GameObject>(SpeedUp,collision.bounds.center - Camera.main.transform.forward * 0.2f, Quaternion.identity);//sppedupをインスタンス化
             //speed *= 0.7f;
 
